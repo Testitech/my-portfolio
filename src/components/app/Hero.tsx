@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-
-import { siteConfig } from "@/config/site";
-
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 import { GithubIcon } from "../icons";
 
+import { siteConfig } from "@/config/site";
 import testicode from "@/images/testicode.jpg";
 
 export default function IndexPage() {
@@ -46,7 +45,7 @@ export default function IndexPage() {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className="w-full min-h-[calc(100vh-64px)] flex items-center py-10">
+    <section className="w-full min-h-[calc(100vh-64px)] flex items-center py-10" id="home">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left space-y-6">
@@ -97,21 +96,18 @@ export default function IndexPage() {
               >
                 Get in Touch
               </Button>
+
               <Button
-                as={Link}
+                as="a"
                 className="font-semibold"
+                download="Testimony_Everest_Resume.pdf"
+                href="/resume.pdf"
                 radius="full"
                 size="lg"
+                startContent={<MdOutlineFileDownload size={20} />}
                 variant="bordered"
               >
-                <a
-                  href={siteConfig.links.github}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {" "}
-                  View My Work
-                </a>
+                Download Resume
               </Button>
             </div>
 

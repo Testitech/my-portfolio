@@ -21,33 +21,33 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "WeCare HR - Digital Healthcare Platform",
     description:
-      "A full-featured online shopping platform with cart management, payment integration, and admin dashboard.",
+      "An AI-powered healthcare management system with intelligent patient record handling and role-based access control for healthcare professionals.",
     image: `${WeCare}`,
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    githubUrl: "https://github.com/yourusername/ecommerce",
-    liveUrl: "https://your-ecommerce-demo.vercel.app",
+    tags: ["Next.js", "Node.js", "MongoDB", "Chart.js", "Google Gemini AI"],
+    githubUrl: "https://github.com/Testitech/weCareEhr",
+    liveUrl: "https://team-ehr.vercel.app/home",
   },
   {
     id: 2,
-    title: "Task Automation Tool",
+    title: "Staff Onboarding Automation System",
     description:
-      "Automated workflow system that streamlines repetitive tasks and integrates with popular services.",
+      "Intelligent workflow automation that streamlines employee onboarding process, reducing manual tasks and ensuring consistent experience for all new hires.",
     image: `${N8N}`,
-    tags: ["Python", "Selenium", "FastAPI", "Docker"],
-    githubUrl: "https://github.com/yourusername/automation-tool",
-    liveUrl: "https://automation-demo.vercel.app",
+    tags: ["N8n", "Google sheets", "Notion", "Gmail", "Slack"],
+    githubUrl: "https://github.com/Testitech",
+    liveUrl: "https://github.com/Testitech",
   },
   {
     id: 3,
-    title: "Portfolio Dashboard",
+    title: "FlexiRide - Car Rental Platform",
     description:
-      "Real-time analytics dashboard with data visualization and interactive charts for portfolio tracking.",
+      "A modern car rental platform with intelligent search, real-time availability, secure payment processing, and comprehensive admin features for fleet management.",
     image: `${FlexRide}`,
-    tags: ["Next.js", "TypeScript", "Tailwind", "Chart.js"],
-    githubUrl: "https://github.com/yourusername/dashboard",
-    liveUrl: "https://dashboard-demo.vercel.app",
+    tags: ["Next.js", "TypeScript", "Stripe", "Postgres", "Tailwind"],
+    githubUrl: "https://github.com/Testitech/car-rental-app",
+    liveUrl: "https://team-datadog.vercel.app/",
   },
 ];
 
@@ -89,28 +89,28 @@ function ProjectCard({ project }: { project: Project }) {
       {/* Action Buttons */}
       <CardFooter className="px-4 pb-4 gap-3">
         <Button
-          isExternal
           as={Link}
           className="flex-1"
           color="default"
-          href={project.githubUrl}
           radius="full"
           startContent={<FaGithub size={18} />}
           variant="bordered"
         >
-          Code
+          <a href={project.githubUrl} rel="noopener noreferrer" target="_blank">
+            Code
+          </a>
         </Button>
         <Button
-          isExternal
           as={Link}
           className="flex-1"
           color="primary"
-          href={project.liveUrl}
           radius="full"
           startContent={<FaExternalLinkAlt size={16} />}
           variant="shadow"
         >
-          Live Demo
+          <a href={project.liveUrl} rel="noopener noreferrer" target="_blank">
+            Live Demo
+          </a>
         </Button>
       </CardFooter>
     </Card>
@@ -145,12 +145,17 @@ export default function ProjectsSection() {
             isExternal
             as={Link}
             color="primary"
-            href="https://github.com/yourusername"
             radius="full"
             size="lg"
             variant="ghost"
           >
-            View All Projects on GitHub
+            <a
+              href="https://github.com/Testitech"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View All Projects on GitHub
+            </a>
           </Button>
         </div>
       </div>
