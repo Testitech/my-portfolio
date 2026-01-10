@@ -46,7 +46,6 @@ function SkillCard({ category }: { category: SkillCategory }) {
   return (
     <Card className="border-2 border-transparent hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
       <CardBody className="p-6 space-y-4">
-        {/* Icon & Title */}
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-blue-400/20 text-primary">
             {category.icon}
@@ -59,7 +58,6 @@ function SkillCard({ category }: { category: SkillCategory }) {
           </div>
         </div>
 
-        {/* Skills Tags */}
         <div className="flex flex-wrap gap-2 pt-2">
           {category.skills.map((skill) => (
             <Chip
@@ -82,7 +80,6 @@ export default function SkillsSection() {
   return (
     <section className="w-full py-20" id="skills">
       <div className="container mx-auto max-w-7xl px-6">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             My Tech{" "}

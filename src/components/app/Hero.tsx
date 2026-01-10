@@ -3,6 +3,7 @@ import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
+
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
@@ -97,34 +98,41 @@ export default function IndexPage() {
                 Get in Touch
               </Button>
               <Button
-                isExternal
                 as={Link}
                 className="font-semibold"
-                href="https://github.com/Testitech"
                 radius="full"
                 size="lg"
                 variant="bordered"
               >
-                View My Work
+                <a
+                  href={siteConfig.links.github}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {" "}
+                  View My Work
+                </a>
               </Button>
             </div>
 
             <div className="flex items-center justify-center lg:justify-normal  gap-x-5">
-              <Button
-                isExternal
-                isIconOnly
-                as={Link}
-                href={siteConfig.links.github}
-              >
-                <GithubIcon size={25} />
+              <Button isExternal isIconOnly as={Link}>
+                <a
+                  href={siteConfig.links.github}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <GithubIcon size={25} />
+                </a>
               </Button>
-              <Button
-                isExternal
-                isIconOnly
-                as={Link}
-                href="https://www.linkedin.com/in/testicode"
-              >
-                <FaLinkedin size={25} />
+              <Button isExternal isIconOnly as={Link}>
+                <a
+                  href="https://linkedin.com/in/testicode"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <FaLinkedin size={25} />
+                </a>
               </Button>
               <Button
                 isExternal
@@ -132,7 +140,13 @@ export default function IndexPage() {
                 as={Link}
                 href={siteConfig.links.twitter}
               >
-                <FaSquareXTwitter size={25} />
+                <a
+                  href={siteConfig.links.twitter}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <FaSquareXTwitter size={25} />
+                </a>
               </Button>
             </div>
           </div>

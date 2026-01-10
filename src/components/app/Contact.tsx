@@ -41,17 +41,17 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: <FaLinkedin size={20} />,
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://linkedin.com/in/testicode",
   },
   {
     name: "GitHub",
     icon: <FaGithub size={20} />,
-    url: "https://github.com/yourusername",
+    url: "https://github.com/Testitech",
   },
   {
     name: "Behance",
     icon: <FaSquareXTwitter size={20} />,
-    url: "https://behance.net/yourusername",
+    url: "https://x.com/@Testicode999",
   },
 ];
 
@@ -78,7 +78,6 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Format message for WhatsApp
     const whatsappMessage = `Hello! 👋
 
 *Name:* ${formData.name}
@@ -88,19 +87,14 @@ export default function ContactSection() {
 *Message:*
 ${formData.message}`;
 
-    // Encode message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    // Your WhatsApp number (without + and spaces)
     const whatsappNumber = "2348155623703";
 
-    // Create WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-    // Open WhatsApp in new tab
     window.open(whatsappURL, "_blank");
 
-    // Reset form
     setTimeout(() => {
       setFormData({
         name: "",
@@ -118,7 +112,6 @@ ${formData.message}`;
       id="contact"
     >
       <div className="container mx-auto max-w-7xl px-6">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent">
             Get In Touch
@@ -130,9 +123,7 @@ ${formData.message}`;
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Side - Contact Info */}
           <div className="lg:col-span-1 space-y-6">
-            {/* Contact Details Card */}
             <Card className="bg-default-50">
               <CardBody className="p-6 space-y-6">
                 {contactInfo.map((info, index) => (
@@ -149,7 +140,6 @@ ${formData.message}`;
                   </div>
                 ))}
 
-                {/* Social Links */}
                 <div className="pt-4 border-t border-default-200">
                   <h4 className="font-semibold text-default-900 mb-4">
                     Professional Profiles
@@ -163,10 +153,15 @@ ${formData.message}`;
                         as={Link}
                         className="flex-1"
                         color="primary"
-                        href={social.url}
                         variant="flat"
                       >
-                        {social.icon}
+                        <a
+                          href={social.url}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {social.icon}
+                        </a>
                       </Button>
                     ))}
                   </div>
@@ -175,12 +170,10 @@ ${formData.message}`;
             </Card>
           </div>
 
-          {/* Right Side - Contact Form */}
           <div className="lg:col-span-2">
             <Card className="bg-default-50">
               <CardBody className="p-8">
                 <form className="space-y-6" onSubmit={handleSubmit}>
-                  {/* Name & Email Row */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Input
                       isRequired
@@ -206,7 +199,6 @@ ${formData.message}`;
                     />
                   </div>
 
-                  {/* Subject */}
                   <Input
                     isRequired
                     label="Subject"
@@ -219,7 +211,6 @@ ${formData.message}`;
                     onChange={handleChange}
                   />
 
-                  {/* Message */}
                   <Textarea
                     isRequired
                     label="Message"
@@ -232,7 +223,6 @@ ${formData.message}`;
                     onChange={handleChange}
                   />
 
-                  {/* Submit Button */}
                   <Button
                     className="w-full font-semibold text-lg"
                     color="primary"
@@ -244,10 +234,6 @@ ${formData.message}`;
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
-
-                  <p className="text-sm text-default-500 text-center">
-                    This will open WhatsApp with your message pre-filled 💬
-                  </p>
                 </form>
               </CardBody>
             </Card>
