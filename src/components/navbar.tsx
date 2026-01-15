@@ -17,8 +17,6 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 
-import { useNavigate } from "react-router-dom";
-
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

@@ -57,7 +57,6 @@ function ProjectCard({ project }: { project: Project }) {
       isPressable
       className="group hover:scale-[1.02] transition-transform duration-300"
     >
-      {/* Project Image */}
       <CardHeader className="p-0 overflow-hidden">
         <div className="relative w-full h-48 overflow-hidden">
           <img
@@ -69,14 +68,12 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </CardHeader>
 
-      {/* Project Details */}
       <CardBody className="px-4 py-4 space-y-3">
         <h3 className="text-xl font-bold">{project.title}</h3>
         <p className="text-default-600 text-sm line-clamp-2">
           {project.description}
         </p>
 
-        {/* Tech Stack Tags */}
         <div className="flex flex-wrap gap-2 pt-2">
           {project.tags.map((tag) => (
             <Chip key={tag} color="primary" size="sm" variant="flat">
@@ -86,7 +83,6 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </CardBody>
 
-      {/* Action Buttons */}
       <CardFooter className="px-4 pb-4 gap-3">
         <Button
           as={Link}
@@ -121,7 +117,6 @@ export default function ProjectsSection() {
   return (
     <section className="w-full py-20" id="projects">
       <div className="container mx-auto max-w-7xl px-6">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="text-primary">Projects</span>
@@ -131,15 +126,11 @@ export default function ProjectsSection() {
             skills and technologies.
           </p>
         </div>
-
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-
-        {/* View All Button */}
         <div className="text-center mt-12">
           <Button
             isExternal

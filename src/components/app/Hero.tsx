@@ -16,7 +16,7 @@ export default function IndexPage() {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const roles = [" Frontend Web Developer", " Automation Expert"];
+  const roles = [" a Frontend Web Developer", " an Automation Expert"];
 
   useEffect(() => {
     const handleType = () => {
@@ -45,7 +45,10 @@ export default function IndexPage() {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className="w-full min-h-[calc(100vh-64px)] flex items-center py-10" id="home">
+    <section
+      className="w-full min-h-[calc(100vh-64px)] flex items-center py-10"
+      id="home"
+    >
       <div className="container mx-auto max-w-7xl px-6">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left space-y-6">
@@ -66,10 +69,9 @@ export default function IndexPage() {
               </h1>
             </div>
 
-            {/* Typewriter effect */}
             <div className="h-16 flex items-center justify-center lg:justify-start">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-default-700">
-                I'm a(n)
+                I'm
                 <span className="text-primary">
                   {text}
                   <span className="animate-pulse">|</span>
@@ -77,13 +79,11 @@ export default function IndexPage() {
               </h2>
             </div>
 
-            {/* One-liner services */}
             <p className="text-lg md:text-xl text-default-600 max-w-2xl">
               Helping businesses get more customers by building websites that
               automatically captures and follow-up with leads
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
               <Button
                 as={Link}
