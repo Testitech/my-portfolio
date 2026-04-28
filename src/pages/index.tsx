@@ -1,9 +1,9 @@
 import DefaultLayout from "@/layouts/default";
-import Hero from "@/components/app/Hero";
-import Projects from "@/components/app/Projects";
-import Stack from "@/components/app/Stack";
-import Testimonials from "@/components/app/Testimonials";
-import Contact from "@/components/app/Contact";
+import Hero from "@/app/components/Hero";
+import Projects from "@/app/components/Projects";
+import Stack from "@/app/components/Stack";
+import Testimonials from "@/app/components/Testimonials";
+import Contact from "@/app/components/Contact";
 
 export default function IndexPage() {
   return (
@@ -12,7 +12,7 @@ export default function IndexPage() {
       <Projects />
       <Stack />
       <Testimonials />
-      <Contact/>
+      <Contact />
     </DefaultLayout>
   );
 }

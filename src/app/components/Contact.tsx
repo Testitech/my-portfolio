@@ -66,7 +66,7 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -118,7 +118,7 @@ ${formData.message}`;
           </h2>
           <p className="text-lg text-default-600 max-w-2xl mx-auto">
             Have a project in mind or want to discuss potential opportunities?
-            I'd love to hear from you.
+            I&apos;d love to hear from you.
           </p>
         </div>
 

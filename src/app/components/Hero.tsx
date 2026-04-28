@@ -5,7 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
 
-import { GithubIcon } from "../icons";
+import { GithubIcon } from "./icons";
 
 import { siteConfig } from "@/config/site";
 import testicode from "@/images/testicode.jpg";
@@ -26,7 +26,7 @@ export default function IndexPage() {
       setText(
         isDeleting
           ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
+          : fullText.substring(0, text.length + 1),
       );
 
       setTypingSpeed(isDeleting ? 50 : 150);

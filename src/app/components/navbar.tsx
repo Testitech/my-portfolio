@@ -15,10 +15,27 @@ import { useState } from "react";
 import { MdOutlineFileDownload } from "react-icons/md";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
+import { ThemeSwitch } from "@/app/components/theme-switch";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false);
+
+    const element = document.querySelector(sectionId);
+
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
@@ -49,6 +66,7 @@ export const Navbar = () => {
             className="flex justify-start items-center gap-1"
             color="foreground"
             href="/"
+            onClick={() => scrollToSection("#home")}
           >
             <p className="font-bold text-xl text-inherit">Testicode</p>
           </Link>
@@ -61,13 +79,13 @@ export const Navbar = () => {
             key={item.href}
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick(item.href);
+              () => scrollToSection(item.href);
             }}
           >
             <Link
               className={clsx(
                 linkStyles({ color: "foreground" }),
-                "data-[active=true]:text-primary data-[active=true]:font-semibold transition-colors"
+                "data-[active=true]:text-primary data-[active=true]:font-semibold transition-colors",
               )}
               color="foreground"
               href={item.href}
@@ -110,7 +128,7 @@ export const Navbar = () => {
               <Link
                 className={clsx(
                   "w-full text-lg",
-                  "data-[active=true]:text-primary data-[active=true]:font-semibold"
+                  "data-[active=true]:text-primary data-[active=true]:font-semibold",
                 )}
                 color="foreground"
                 href={item.href}
